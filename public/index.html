@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KB Video Downloader</title>
+    <meta charset="UTF-8">
+</head>
+<body style="font-family: sans-serif;">
+    <h2>KB Video Downloader</h2>
+    <input type="text" id="videoUrl" placeholder="Paste KB.dk video URL here" style="width: 80%; padding: 8px;">
+    <button onclick="downloadVideo()" style="padding: 8px;">Download Video</button>
+
+    <script>
+        function downloadVideo() {
+            const url = document.getElementById('videoUrl').value;
+            if (!url) {
+                alert('Please enter a URL.');
+                return;
+            }
+            window.location.href = `/download?url=${encodeURIComponent(url)}`;
+        }
+    </script>
+</body>
+</html>
